@@ -60,10 +60,7 @@ function renderOneToy(toy) {
     card.querySelector('span').textContent=toy.likes
     updateLikes(toy)
   })
-
 }
-
-
 
 
 // PATCH likes - (the UPDATE part of Crud)
@@ -81,7 +78,6 @@ function updateLikes(toyObj) {
     .then(toy => console.log(toy))
 }
 
-
 // POST new toy
 function createToy(toyObj) {
   //console.log(JSON.stringify(toyObj))
@@ -97,9 +93,6 @@ function createToy(toyObj) {
     .then(toy => console.log(toy))
 }
 
-
-
-
 // GET is the default so no need to method: GET
 function getAllToys() {
   fetch('http://localhost:3000/toys')
@@ -107,25 +100,3 @@ function getAllToys() {
     //.then(data => console.log(data))
     .then(toyData => toyData.forEach(toy => renderOneToy(toy)))
 }
-
-
-//////////////////////////
-// start of page
-
-//let addToy=false;
-
-//document.addEventListener("DOMContentLoaded",() => {
-//  const addBtn=document.querySelector("#new-toy-btn");
-//  const toyFormContainer=document.querySelector(".container");
-//  addBtn.addEventListener("click",() => {
-//    // hide & seek with the form
-//    addToy=!addToy;
-//    if(addToy) {
-//      toyFormContainer.style.display="block";
-//    } else {
-//      toyFormContainer.style.display="none";
-//    }
-//  });
-//});
-
-
